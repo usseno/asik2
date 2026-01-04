@@ -1,4 +1,4 @@
-public class Person {
+public class Person implements Payable, Comparable<Person> {
 
     private static int nextId = 1;
 
@@ -6,7 +6,7 @@ public class Person {
     private String name;
     private String surname;
 
-
+    // default constructor
     public Person() {
         this.id = nextId++;
         this.name = "";
@@ -46,22 +46,21 @@ public class Person {
         return "Student";
     }
 
-    // required format: "1. John Lennon"
+
     @Override
     public String toString() {
         return id + ". " + name + " " + surname;
     }
 
-    // Payable default (overridden)
+
     @Override
     public double getPaymentAmount() {
         return 0.0;
     }
 
-    // Comparable by money earned
+
     @Override
     public int compareTo(Person other) {
         return Double.compare(this.getPaymentAmount(), other.getPaymentAmount());
     }
 }
-

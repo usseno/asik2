@@ -35,17 +35,18 @@ public class Employee extends Person {
         this.salary = salary;
     }
 
-    // employee earns salary
+
     @Override
     public double getPaymentAmount() {
         return salary;
     }
 
-    // "Employee: 1. John Lennon"
+
     @Override
     public String toString() {
-        return "Employee: " + super.toString();
+        return position + ": " + super.toString();
     }
+
 
     @Override
     public int compareTo(Person other) {

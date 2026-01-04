@@ -7,21 +7,24 @@ public class MyApplication {
 
         ArrayList<Person> people = new ArrayList<>();
 
-        people.add(new Employee("John", "Lennon", "Employee", 27045.78));
-        people.add(new Employee2("George", "Harrison", "Employee 2", 50000.00));
+        for (Employee e : EmployeeData.getEmployees())
+            people.add(e);
 
-        people.add(new Student("Ringo", "Starr", 2.50));          // no stipend
-        people.add(new ScholarStudent("Paul", "McCartney", 3.10)); // stipend
+        for (Student s : StudentData.getStudents())
+            people.add(s);
+
 
         Collections.sort(people);
+
 
         printData(people);
     }
 
+
     public static void printData(Iterable<Person> people) {
+
         for (Person p : people) {
-            System.out.printf(
-                    "%s earns %.2f tenge%n",
+            System.out.printf("%s earns %.2f tenge%n",
                     p.toString(),
                     p.getPaymentAmount()
             );

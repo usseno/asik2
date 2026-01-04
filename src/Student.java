@@ -23,6 +23,7 @@ public class Student extends Person {
         this.gpa = gpa;
     }
 
+
     @Override
     public double getPaymentAmount() {
         if (gpa > 2.67) {
@@ -36,6 +37,7 @@ public class Student extends Person {
     public String toString() {
         return "Student: " + super.toString();
     }
+
 
     @Override
     public int compareTo(Person other) {
